@@ -1,0 +1,128 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--primary-bg);
+  color: var(--primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hero__title {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-h);
+}
+
+.hero__subtitle {
+  margin: 0 0 2rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 32rem;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero__stats {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero__stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hero__stats strong {
+  font-size: 1.5rem;
+  color: var(--text-h);
+}
+
+.hero__stats span {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.hero__visual {
+  position: relative;
+  min-height: 320px;
+}
+
+.hero__card {
+  position: absolute;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero__card-label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.hero__card-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.hero__card--primary {
+  top: 0;
+  left: 10%;
+  width: 55%;
+}
+
+.hero__card--secondary {
+  top: 38%;
+  right: 0;
+  width: 50%;
+}
+
+.hero__card--accent {
+  bottom: 0;
+  left: 5%;
+  width: 48%;
+  border-color: var(--primary-border);
+  background: var(--primary-bg);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero__visual {
+    min-height: 260px;
+  }
+}
