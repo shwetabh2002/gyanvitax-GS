@@ -1,12 +1,10 @@
 # GyanVitax GS
 
-React frontend for **GyanVitax** — an education and tax management platform for institutions.
+React frontend for [gyanvitax.com](https://www.gyanvitax.com/) — Gyanvi Accounting & Tax Consultant.
 
 ## Stack
 
-- [React 19](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vite.dev/)
+- React 19 + TypeScript + Vite + React Router
 
 ## Getting started
 
@@ -15,26 +13,26 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:5173](http://localhost:5173).
+
+## Pages
+
+| Route | Page |
+|-------|------|
+| `/` | Home — hero, stats, services preview, testimonials |
+| `/services` | Full services & pricing |
+| `/about` | About, team, commitment |
+| `/contact` | Contact form & office details |
+| `/locations` | Delhi, Ghaziabad, Meerut, Hapur |
+| `/privacy-policy` | Privacy policy |
+| `/terms-of-service` | Terms of service |
+| `/refund-policy` | Refund policy |
 
 ## Scripts
 
-| Command         | Description              |
-| --------------- | ------------------------ |
-| `npm run dev`   | Start development server |
-| `npm run build` | Production build         |
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server |
+| `npm run build` | Production build |
 | `npm run preview` | Preview production build |
-| `npm run lint`  | Run ESLint               |
-
-## Project structure
-
-```
-src/
-├── components/   # UI components (Header, Hero, Features, Footer)
-├── App.tsx       # Root layout
-└── main.tsx      # Entry point
-```
-
-## License
-
-Private — Girjasoft / GyanVitax.
+| `npm run lint` | Run ESLint |

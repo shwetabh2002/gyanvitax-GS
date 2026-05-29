@@ -1,0 +1,46 @@
+.consultation__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.consultation__info h3 {
+  margin: 0 0 1.5rem;
+  font-size: 1.25rem;
+}
+
+.consultation__item {
+  margin-bottom: 1.5rem;
+}
+
+.consultation__item strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--primary);
+  font-size: 0.9375rem;
+}
+
+.consultation__item a {
+  display: block;
+  color: var(--text-h);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.consultation__item a:hover {
+  color: var(--primary);
+}
+
+.consultation__item p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .consultation__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,26 +1,27 @@
 :root {
-  --text: #475569;
-  --text-h: #0f172a;
-  --text-muted: #94a3b8;
-  --bg: #f8fafc;
+  --text: #4a5568;
+  --text-h: #1a202c;
+  --text-muted: #718096;
+  --bg: #f7fafc;
   --surface: #ffffff;
-  --surface-muted: #f1f5f9;
+  --surface-alt: #edf2f7;
   --border: #e2e8f0;
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-bg: rgba(37, 99, 235, 0.08);
-  --primary-border: rgba(37, 99, 235, 0.35);
-  --shadow: 0 10px 40px -12px rgba(15, 23, 42, 0.15);
+  --primary: #1e3a5f;
+  --primary-light: #2c5282;
+  --accent: #d4a017;
+  --accent-hover: #b8860b;
+  --accent-green: #276749;
+  --whatsapp: #25d366;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --header-h: 72px;
 
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
   color: var(--text);
-  background-color: var(--bg);
+  background: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 *,
@@ -29,24 +30,133 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100svh;
 }
 
 #root {
   min-height: 100svh;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: 600;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-h);
+  line-height: 1.25;
 }
 
-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section--alt {
+  background: var(--surface-alt);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: block;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 0.75rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #1a202c;
+  border-color: var(--accent);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn--outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn--whatsapp {
+  background: var(--whatsapp);
+  color: #fff;
+  border-color: var(--whatsapp);
+}
+
+.btn--whatsapp:hover {
+  background: #1da851;
+  border-color: #1da851;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.btn--sm {
+  font-size: 0.8125rem;
+  padding: 0.45rem 0.9rem;
 }

@@ -1,0 +1,158 @@
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+}
+
+.service-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.service-card__header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.service-card__hi {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.service-card__price {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.service-card__price span {
+  display: block;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.service-card__price strong {
+  display: block;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+.service-card__list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.service-card__list li {
+  padding: 0.4rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+  font-size: 0.9375rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.service-card__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+.service-card__bonus {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.service-card__side {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.service-card__side-item {
+  background: var(--surface-alt);
+  padding: 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.service-card__side-item strong {
+  font-size: 0.8125rem;
+  color: var(--primary);
+}
+
+.service-card__side-item span {
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
+.services__urgent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 12px;
+}
+
+.services__urgent h3 {
+  margin: 0 0 0.25rem;
+  color: #fff;
+}
+
+.services__urgent p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.services__urgent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.services__urgent .btn--outline {
+  color: #fff;
+  border-color: #fff;
+}
+
+.services__urgent .btn--outline:hover {
+  background: #fff;
+  color: var(--primary);
+}
+
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}

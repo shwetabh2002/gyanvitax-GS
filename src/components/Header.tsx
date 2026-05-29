@@ -1,32 +1,85 @@
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { LOCATIONS, NAV_LINKS, ROUTES, SITE } from '../data/content'
 import './Header.css'
 
-const navLinks = [
-  { label: 'Features', href: '#features' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-]
-
 export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [locationsOpen, setLocationsOpen] = useState(false)
+  const closeMenu = () => {
+    setMenuOpen(false)
+    setLocationsOpen(false)
+  }
+
   return (
     <header className="header">
-      <a href="/" className="header__brand">
-        <span className="header__logo">GV</span>
-        <span className="header__name">GyanVitax</span>
-      </a>
-      <nav className="header__nav" aria-label="Main navigation">
-        {navLinks.map((link) => (
-          <a key={link.href} href={link.href} className="header__link">
-            {link.label}
+      <div className="header__top">
+        <div className="container header__top-inner">
+          <a href={`tel:${SITE.phone.replace(/-/g, '')}`} className="header__phone">
+            {SITE.phone}
           </a>
-        ))}
-      </nav>
-      <div className="header__actions">
-        <button type="button" className="btn btn--ghost">
-          Sign in
+          <Link to={ROUTES.contact} className="btn btn--primary btn--sm" onClick={closeMenu}>
+            Get Started
+          </Link>
+        </div>
+      </div>
+
+      <div className="container header__main">
+        <Link to={ROUTES.home} className="header__brand" onClick={closeMenu}>
+          <span className="header__brand-main">{SITE.name}</span>
+          <span className="header__brand-sub">{SITE.tagline}</span>
+        </Link>
+
+        <button
+          type="button"
+          className="header__toggle"
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span />
+          <span />
+          <span />
         </button>
-        <button type="button" className="btn btn--primary">
-          Get started
-        </button>
+
+        <nav className={`header__nav ${menuOpen ? 'header__nav--open' : ''}`}>
+          {NAV_LINKS.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `header__link${isActive ? ' header__link--active' : ''}`
+              }
+              onClick={closeMenu}
+              end={link.to === ROUTES.home}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+
+          <div className="header__dropdown">
+            <button
+              type="button"
+              className="header__link header__link--dropdown"
+              aria-expanded={locationsOpen}
+              onClick={() => setLocationsOpen(!locationsOpen)}
+            >
+              LOCATIONS ▾
+            </button>
+            {locationsOpen && (
+              <div className="header__dropdown-menu">
+                <Link to={ROUTES.locations} onClick={closeMenu}>
+                  All Locations
+                </Link>
+                {LOCATIONS.map((loc) => (
+                  <Link key={loc.label} to={loc.to} onClick={closeMenu}>
+                    {loc.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        </nav>
       </div>
     </header>
   )

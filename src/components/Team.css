@@ -1,0 +1,66 @@
+.team__quote {
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--accent);
+  background: var(--surface-alt);
+  border-radius: 0 8px 8px 0;
+}
+
+.team__quote p {
+  margin: 0;
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+.team-card {
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+}
+
+.team-card__photo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--border);
+  background: var(--surface-alt);
+  display: block;
+}
+
+.team-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.9375rem;
+}
+
+.team-card p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .team__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
